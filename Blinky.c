@@ -28,11 +28,26 @@
 static osThreadId_t tid_thrLED;         // Thread id of thread: LED
 static osThreadId_t tid_thrButton;      // Thread id of thread: Button
 
+bool LEDrun;
+
+static uint32_t analog_val;
+
+/* Read analog inputs */
+int32_t analog_in (uint32_t ch) {
+  int32_t val = 0;
+
+  if (ch == 0) {
+    val = analog_val & 0x3FF;
+  }
+  return (val);
+}
+
 /*-----------------------------------------------------------------------------
   thrLED: blink LED
  *----------------------------------------------------------------------------*/
 static __NO_RETURN void thrLED (void *argument) {
   uint32_t active_flag = 0U;
+  uint32_t led1_state = 0U;
 
   (void)argument;
 
@@ -42,19 +57,21 @@ static __NO_RETURN void thrLED (void *argument) {
     }
 
     if (active_flag == 1U) {
-      vioSetSignal(vioLED0, vioLEDoff);         // Switch LED0 off
-      vioSetSignal(vioLED1, vioLEDon);          // Switch LED1 on
-      osDelay(100U);                            // Delay 100 ms
-      vioSetSignal(vioLED0, vioLEDon);          // Switch LED0 on
-      vioSetSignal(vioLED1, vioLEDoff);         // Switch LED1 off
-      osDelay(100U);                            // Delay 100 ms
+      //toggle vioLED1
+      led1_state ^= 1U;                         // Toggle LED1 state
+      vioSetSignal(vioLED1, led1_state ? vioLEDon : vioLEDoff);
     }
-    else {
+
+    if (LEDrun == true) {
       vioSetSignal(vioLED0, vioLEDon);          // Switch LED0 on
       osDelay(500U);                            // Delay 500 ms
       vioSetSignal(vioLED0, vioLEDoff);         // Switch LED0 off
       osDelay(500U);                            // Delay 500 ms
     }
+
+    osDelay(500U);
+    analog_val += 10;
+
   }
 }
 

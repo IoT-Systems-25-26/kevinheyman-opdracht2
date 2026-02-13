@@ -56,6 +56,8 @@
 /* Keil::Network&MDK:Interface:ETH@8.2.0 */
 #define RTE_Network_Interface_ETH_0     /* Network Interface ETH 0 */
 
+/* Keil::Network&MDK:Service:Web Server Compact&HTTP@8.2.0 */
+#define RTE_Network_Web_Server_RO       /* Network Web Server with Read-only Web Resources */
 /* Keil::Network&MDK:Socket:BSD@8.2.0 */
 #define RTE_Network_Socket_BSD          /* Network Socket BSD */
 /* Keil::Network&MDK:Socket:TCP@8.2.0 */

@@ -134,15 +134,15 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
-          <pFcarmOut></pFcarmOut>
-          <pFcarmGrp></pFcarmGrp>
-          <pFcArmRoot></pFcArmRoot>
+          <pFcarmOut>Web.c</pFcarmOut>
+          <pFcarmGrp>Source Group 1</pFcarmGrp>
+          <pFcArmRoot>Web</pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
@@ -485,6 +485,16 @@
               <FileType>1</FileType>
               <FilePath>.\stm32746g_discovery.c</FilePath>
             </File>
+            <File>
+              <FileName>HTTP_Server_CGI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HTTP_Server_CGI.c</FilePath>
+            </File>
+            <File>
+              <FileName>Web.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>Web\Web.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -763,6 +773,106 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Web files</GroupName>
+          <Files>
+            <File>
+              <FileName>ad.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\ad.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>ad.cgx</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\ad.cgx</FilePath>
+            </File>
+            <File>
+              <FileName>arm.png</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\arm.png</FilePath>
+            </File>
+            <File>
+              <FileName>buttons.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\buttons.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>buttons.cgx</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\buttons.cgx</FilePath>
+            </File>
+            <File>
+              <FileName>home.png</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\home.png</FilePath>
+            </File>
+            <File>
+              <FileName>index.htm</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\index.htm</FilePath>
+            </File>
+            <File>
+              <FileName>keil.gif</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\keil.gif</FilePath>
+            </File>
+            <File>
+              <FileName>language.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\language.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>lcd.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\lcd.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>leds.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\leds.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>llblue.jpg</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\llblue.jpg</FilePath>
+            </File>
+            <File>
+              <FileName>network.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\network.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>pabb.gif</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\pabb.gif</FilePath>
+            </File>
+            <File>
+              <FileName>pg_footer.inc</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\pg_footer.inc</FilePath>
+            </File>
+            <File>
+              <FileName>pg_header.inc</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\pg_header.inc</FilePath>
+            </File>
+            <File>
+              <FileName>system.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\system.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>tcp.cgi</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\tcp.cgi</FilePath>
+            </File>
+            <File>
+              <FileName>xml_http.js</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\Web\xml_http.js</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -945,6 +1055,12 @@
           <targetInfo name="Target_1"/>
         </targetInfos>
       </component>
+      <component Cbundle="MDK" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="8.2.0" condition="Network Web Server Compact" ymlID="Network&amp;MDK:Service:Web Server Compact&amp;HTTP">
+        <package name="MDK-Middleware" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="Keil" version="8.2.0"/>
+        <targetInfos>
+          <targetInfo name="Target_1"/>
+        </targetInfos>
+      </component>
       <component Cbundle="MDK" Cclass="Network" Cgroup="Socket" Csub="BSD" Cvendor="Keil" Cversion="8.2.0" condition="Network UDP/TCP" ymlID="Network&amp;MDK:Socket:BSD">
         <package name="MDK-Middleware" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="Keil" version="8.2.0"/>
         <targetInfos>
@@ -1062,6 +1178,14 @@
       <file attr="config" category="header" name="Components\Network\Config\Net_Config_ETH.h" version="7.5.0">
         <instance index="0">RTE\Network\Net_Config_ETH_0.h</instance>
         <component Cbundle="MDK" Cclass="Network" Cgroup="Interface" Csub="ETH" Cvendor="Keil" Cversion="8.2.0" condition="Network Driver ETH" maxInstances="2"/>
+        <package name="MDK-Middleware" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="Keil" version="8.2.0"/>
+        <targetInfos>
+          <targetInfo name="Target_1"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="header" name="Components\Network\Config\Net_Config_HTTP_Server.h" version="7.2.1">
+        <instance index="0">RTE\Network\Net_Config_HTTP_Server.h</instance>
+        <component Cbundle="MDK" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="8.2.0" condition="Network Web Server Compact" isDefaultVariant="1"/>
         <package name="MDK-Middleware" schemaVersion="1.7.36" url="https://www.keil.com/pack/" vendor="Keil" version="8.2.0"/>
         <targetInfos>
           <targetInfo name="Target_1"/>
