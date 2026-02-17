@@ -56,18 +56,18 @@ static __NO_RETURN void thrLED (void *argument) {
       active_flag ^= 1U;
     }
 
-    if (active_flag == 1U) {
-      //toggle vioLED1
-      led1_state ^= 1U;                         // Toggle LED1 state
-      vioSetSignal(vioLED1, led1_state ? vioLEDon : vioLEDoff);
-    }
+//    if (active_flag == 1U) {
+//      //toggle vioLED1
+//      led1_state ^= 1U;                         // Toggle LED1 state
+//      vioSetSignal(vioLED1, led1_state ? vioLEDon : vioLEDoff);
+//    }
 
-    if (LEDrun == true) {
-      vioSetSignal(vioLED0, vioLEDon);          // Switch LED0 on
-      osDelay(500U);                            // Delay 500 ms
-      vioSetSignal(vioLED0, vioLEDoff);         // Switch LED0 off
-      osDelay(500U);                            // Delay 500 ms
-    }
+//    if (LEDrun == true) {
+//      vioSetSignal(vioLED0, vioLEDon);          // Switch LED0 on
+//      osDelay(500U);                            // Delay 500 ms
+//      vioSetSignal(vioLED0, vioLEDoff);         // Switch LED0 off
+//      osDelay(500U);                            // Delay 500 ms
+//    }
 
     osDelay(500U);
     analog_val += 10;
